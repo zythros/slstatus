@@ -75,5 +75,5 @@ static const struct arg args[] = {
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT0" },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT1" },
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT1" },
-    { datetime,       "^c#84cc16^󰸗 %s^d^",            "%I:%M:%S %p" },
+    { datetime,       "^c#84cc16^󰸗 %s^d^",            "%a %b %d  %I:%M %p" },
 };
