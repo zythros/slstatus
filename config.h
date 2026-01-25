@@ -69,9 +69,9 @@ static const struct arg args[] = {
 
     /* function       format                          argument */
     { run_command,    " ^c#ec4899^󰕾 %s%%^d^ ",        "pamixer --get-volume" },
-	  { cpu_perc,		    " ^c#06b6d4^ %s%%^d^ ",        NULL },
-	  { ram_perc,       "^c#a855f7^󰫗 %s%%^d^ ",		      NULL },
-    { keymap,		      "^c#f59e0b^ %s^d^ ",		        NULL },
+	{ cpu_perc,		    " ^c#06b6d4^ %s%%^d^  ",        NULL },
+	{ ram_perc,       "^c#a855f7^󰫗 %s%%^d^  ",		      NULL },
+    //{ keymap,		      "^c#f59e0b^ %s^d^ ",		        NULL },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT0" },
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT0" },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT1" },
