@@ -68,6 +68,7 @@ static const struct arg args[] = {
     // uses https://dwm.suckless.org/patches/status2d patch ^c#[HEX]^ to set color and ^d^ to reset color
 
     /* function       format                          argument */
+    { run_command,    " ^c#ec4899^󰕾 %s%%^d^ ",        "pamixer --get-volume" },
 	  { cpu_perc,		    " ^c#06b6d4^ %s%%^d^ ",        NULL },
 	  { ram_perc,       "^c#a855f7^󰫗 %s%%^d^ ",		      NULL },
     { keymap,		      "^c#f59e0b^ %s^d^ ",		        NULL },
