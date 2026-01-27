@@ -25,7 +25,8 @@
 	cpu_perc(const char *unused)
 	{
 		static long double a[7];
-		long double b[7], sum;
+		static long double smoothed = -1;
+		long double b[7], sum, perc;
 
 		memcpy(b, a, sizeof(b));
 		/* cpu user nice system idle iowait irq softirq */
@@ -43,9 +44,16 @@
 		if (sum == 0)
 			return NULL;
 
-		return bprintf("%d", (int)(100 *
-		               ((b[0] + b[1] + b[2] + b[5] + b[6]) -
-		                (a[0] + a[1] + a[2] + a[5] + a[6])) / sum));
+		perc = 100 * ((b[0] + b[1] + b[2] + b[5] + b[6]) -
+		              (a[0] + a[1] + a[2] + a[5] + a[6])) / sum;
+
+		/* exponential moving average for smoothing (0.3 = responsiveness) */
+		if (smoothed < 0)
+			smoothed = perc;
+		else
+			smoothed = 0.3 * perc + 0.7 * smoothed;
+
+		return bprintf("%d", (int)smoothed);
 	}
 #elif defined(__OpenBSD__)
 	#include <sys/param.h>
