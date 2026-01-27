@@ -47,11 +47,11 @@
 		perc = 100 * ((b[0] + b[1] + b[2] + b[5] + b[6]) -
 		              (a[0] + a[1] + a[2] + a[5] + a[6])) / sum;
 
-		/* exponential moving average for smoothing (0.3 = responsiveness) */
+		/* exponential moving average for smoothing (lower = more stable) */
 		if (smoothed < 0)
 			smoothed = perc;
 		else
-			smoothed = 0.3 * perc + 0.7 * smoothed;
+			smoothed = 0.15 * perc + 0.85 * smoothed;
 
 		return bprintf("%d", (int)smoothed);
 	}
