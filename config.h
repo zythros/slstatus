@@ -21,7 +21,6 @@ static const char unknown_str[] = "?";
  *                                                     NULL on OpenBSD/FreeBSD
  * cat                 read arbitrary file             path
  * cpu_freq            cpu frequency in MHz            NULL
- * cpu_perc            cpu usage in percent            NULL
  * datetime            date and time                   format string (%F %T)
  * disk_free           free disk space in GB           mountpoint path (/)
  * disk_perc           disk usage in percent           mountpoint path (/)
@@ -43,7 +42,6 @@ static const char unknown_str[] = "?";
  * num_files           number of files in a directory  path
  *                                                     (/home/foo/Inbox/cur)
  * ram_free            free memory in GB               NULL
- * ram_perc            memory usage in percent         NULL
  * ram_total           total memory size in GB         NULL
  * ram_used            used memory in GB               NULL
  * run_command         custom shell command            command (echo foo)
@@ -68,12 +66,10 @@ static const struct arg args[] = {
     // uses https://dwm.suckless.org/patches/status2d patch ^c#[HEX]^ to set color and ^d^ to reset color
 
     /* function       format                          argument */
-	{ cpu_perc,		    " ^c#06b6d4^ %s%%^d^  ",        NULL },
-	{ ram_perc,       "^c#a855f7^󰫗 %s%%^d^  ",		      NULL },
     //{ keymap,		      "^c#f59e0b^ %s^d^ ",		        NULL },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT0" },
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT0" },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT1" },
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT1" },
-    { datetime,       "^b#005577^^c#111111^󰸗 %s^d^",   "%a %b %d  %I:%M %p" },
+    { datetime,       "^b#222222^^c#eeeeee^󰸗 %s^d^",   "%a %b %d  %I:%M %p" },
 };
